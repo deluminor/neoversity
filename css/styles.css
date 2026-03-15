@@ -196,7 +196,8 @@ img {
 
 .hero-order-btn {
   display: block;
-  min-width: 169px;
+  width: 169px;
+  height: 56px;
   border: none;
   border-radius: 4px;
   padding: 16px 32px;
@@ -521,6 +522,8 @@ img {
 .footer-subscribe-icon {
   margin-left: 16px;
   fill: var(--white);
+  width: 24px;
+  height: 20px;
 }
 
 /* Backdrop */
@@ -650,6 +653,8 @@ img {
   top: 50%;
   transform: translateY(-50%);
   fill: var(--navy-blue);
+  width: 18px;
+  height: 24px;
   transition: fill var(--transition-duration) var(--transition-timing);
 }
 
@@ -729,7 +734,7 @@ img {
 
 .modal-form-btn {
   display: block;
-  min-width: 170px;
+  width: 169px;
   height: 56px;
   margin: 0 auto;
   border: none;
