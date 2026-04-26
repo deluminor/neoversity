@@ -78,8 +78,6 @@ ul {
   opacity: 0.98;
 }
 
-/* —— Modal (basicLightbox custom content) —— */
-/* Fullscreen: override library default centering + single-child img rules */
 .basicLightbox.basicLightbox--fullscreen {
   align-items: stretch;
   justify-content: stretch;
