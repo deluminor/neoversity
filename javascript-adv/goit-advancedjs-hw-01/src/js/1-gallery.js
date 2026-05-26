@@ -1,6 +1,14 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
+const GALLERY_SELECTOR = '.gallery';
+const LIGHTBOX_SELECTOR = `${GALLERY_SELECTOR} a`;
+const LIGHTBOX_OPTIONS = {
+  captionsData: 'alt',
+  captionPosition: 'bottom',
+  captionDelay: 250,
+};
+
 const images = [
   {
     preview:
@@ -67,8 +75,6 @@ const images = [
   },
 ];
 
-const galleryRef = document.querySelector('.gallery');
-
 const createGalleryItemMarkup = ({ preview, original, description }) => {
   return `<li class="gallery-item">
   <a class="gallery-link" href="${original}">
@@ -81,12 +87,9 @@ const createGalleryItemMarkup = ({ preview, original, description }) => {
 </li>`;
 };
 
+const galleryRef = document.querySelector(GALLERY_SELECTOR);
 const galleryItemsMarkup = images.map(createGalleryItemMarkup).join('');
 
 galleryRef.insertAdjacentHTML('beforeend', galleryItemsMarkup);
 
-new SimpleLightbox('.gallery a', {
-  captionsData: 'alt',
-  captionPosition: 'bottom',
-  captionDelay: 250,
-});
+new SimpleLightbox(LIGHTBOX_SELECTOR, LIGHTBOX_OPTIONS);

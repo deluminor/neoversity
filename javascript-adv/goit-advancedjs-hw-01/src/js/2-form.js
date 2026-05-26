@@ -1,10 +1,21 @@
 const FORM_STORAGE_KEY = 'feedback-form-state';
+const FIELD_NAMES = {
+  email: 'email',
+  message: 'message',
+};
+
 const formData = {
   email: '',
   message: '',
 };
 
 const formRef = document.querySelector('.feedback-form');
+
+const isFormField = element => {
+  return (
+    element.name === FIELD_NAMES.email || element.name === FIELD_NAMES.message
+  );
+};
 
 const isValidStoredData = value => {
   return (
@@ -15,11 +26,11 @@ const isValidStoredData = value => {
   );
 };
 
-const restoreFormState = () => {
+const getStoredFormData = () => {
   const savedState = localStorage.getItem(FORM_STORAGE_KEY);
 
   if (savedState === null) {
-    return;
+    return null;
   }
 
   try {
@@ -27,41 +38,71 @@ const restoreFormState = () => {
 
     if (!isValidStoredData(parsedState)) {
       localStorage.removeItem(FORM_STORAGE_KEY);
-      return;
+      return null;
     }
 
-    formData.email = parsedState.email.trim();
-    formData.message = parsedState.message.trim();
-    formRef.elements.email.value = formData.email;
-    formRef.elements.message.value = formData.message;
+    return {
+      email: parsedState.email.trim(),
+      message: parsedState.message.trim(),
+    };
   } catch (error) {
-    console.warn('Failed to restore feedback form state', error);
+    console.warn('Failed to parse feedback form state', error);
     localStorage.removeItem(FORM_STORAGE_KEY);
+    return null;
   }
 };
 
-const handleFormInput = event => {
-  const { name, value } = event.target;
+const updateFormData = ({ email, message }) => {
+  formData.email = email;
+  formData.message = message;
+};
 
-  if (!(name in formData)) {
-    return;
-  }
+const syncFormFields = () => {
+  formRef.elements.email.value = formData.email;
+  formRef.elements.message.value = formData.message;
+};
 
-  formData[name] = value.trim();
+const saveFormData = () => {
   localStorage.setItem(FORM_STORAGE_KEY, JSON.stringify(formData));
 };
 
+const restoreFormState = () => {
+  const storedFormData = getStoredFormData();
+
+  if (storedFormData === null) {
+    return;
+  }
+
+  updateFormData(storedFormData);
+  syncFormFields();
+};
+
+const handleFormInput = event => {
+  if (!isFormField(event.target)) {
+    return;
+  }
+
+  formData[event.target.name] = event.target.value.trim();
+  saveFormData();
+};
+
 const resetFormState = () => {
-  formData.email = '';
-  formData.message = '';
+  updateFormData({
+    email: '',
+    message: '',
+  });
   localStorage.removeItem(FORM_STORAGE_KEY);
   formRef.reset();
+};
+
+const isFormComplete = () => {
+  return formData.email !== '' && formData.message !== '';
 };
 
 const handleFormSubmit = event => {
   event.preventDefault();
 
-  if (formData.email === '' || formData.message === '') {
+  if (!isFormComplete()) {
     window.alert('Fill please all fields');
     return;
   }
