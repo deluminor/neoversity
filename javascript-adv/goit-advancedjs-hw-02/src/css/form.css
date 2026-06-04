@@ -1,0 +1,99 @@
+.form {
+  display: grid;
+  width: min(100%, 560px);
+  gap: 20px;
+  padding: 28px;
+}
+
+.form-label {
+  display: grid;
+  gap: 10px;
+}
+
+.state-fieldset {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  border: 1px solid rgba(23, 32, 51, 0.12);
+  border-radius: 8px;
+  padding: 18px;
+}
+
+.state-fieldset legend {
+  padding: 0 8px;
+  color: #344054;
+  font-size: 15px;
+  font-weight: 750;
+}
+
+.radio-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 72px;
+  border: 1px solid #d8e0ea;
+  border-radius: 8px;
+  padding: 14px 16px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease,
+    transform 200ms ease;
+}
+
+.radio-card:hover {
+  border-color: #14b8a6;
+  box-shadow: 0 12px 28px rgba(44, 62, 80, 0.1);
+  transform: translateY(-1px);
+}
+
+.radio-card input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.radio-mark {
+  display: inline-flex;
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #94a3b8;
+  border-radius: 50%;
+  background-color: #ffffff;
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.radio-card input:checked + .radio-mark {
+  border: 7px solid #0f766e;
+  box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.14);
+}
+
+.radio-card:has(input:checked) {
+  border-color: #14b8a6;
+  background-color: #f0fdfa;
+}
+
+.radio-title,
+.radio-text {
+  display: block;
+}
+
+.radio-title {
+  color: #172033;
+  font-weight: 800;
+}
+
+.radio-text {
+  color: #667085;
+  font-size: 14px;
+}
+
+.form-button {
+  width: 100%;
+}
