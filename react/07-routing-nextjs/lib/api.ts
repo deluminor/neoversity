@@ -1,6 +1,6 @@
 import axios from "axios";
 import * as Yup from "yup";
-import { NOTE_TAGS, type NewNote, type Note } from "@/features/notes/types";
+import { NOTE_TAGS, type NewNote, type Note } from "@/types/note";
 import { API_ROUTES } from "@/constants/routes";
 
 const NoteSchema = Yup.object({

@@ -1,11 +1,11 @@
 "use client";
 
-import { useNotes } from "@/features/notes/hooks/useNotes";
+import { useNotes } from "@/hooks/useNotes";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Loader from "../../components/Loader/Loader";
 import Modal from "../../components/Modal/Modal";
-import NoteForm from "@/features/notes/components/NoteForm/NoteForm";
-import NoteList from "@/features/notes/components/NoteList/NoteList";
+import NoteForm from "@/components/NoteForm/NoteForm";
+import NoteList from "@/components/NoteList/NoteList";
 import Pagination from "../../components/Pagination/Pagination";
 import SearchBox from "../../components/SearchBox/SearchBox";
 import css from "./NotesPage.module.css";

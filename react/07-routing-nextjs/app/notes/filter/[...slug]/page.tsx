@@ -5,17 +5,17 @@ import {
   HydrationBoundary,
   QueryClient,
 } from "@tanstack/react-query";
-import { fetchNotes } from "@/features/notes/requests/notes.datasource";
+import { fetchNotes } from "@/lib/api";
 import NotesClient from "../../Notes.client";
 
 export default async function TagFilteredNotesPage({
   params,
 }: {
-  params: Promise<{ tag: string[] }>;
+  params: Promise<{ slug: string[] }>;
 }) {
   const resolvedParams = await params;
   const queryClient = new QueryClient();
-  const tagParam = resolvedParams.tag[0];
+  const tagParam = resolvedParams.slug[0];
   const tag = tagParam === "all" ? undefined : tagParam;
 
   await queryClient.prefetchQuery({

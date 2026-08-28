@@ -7,8 +7,8 @@ import {
 import { useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
-import { createNote, deleteNote, fetchNotes } from "@/features/notes/requests/notes.datasource";
-import type { NewNote } from "@/features/notes/types";
+import { createNote, deleteNote, fetchNotes } from "@/lib/api";
+import type { NewNote } from "@/types/note";
 
 const PER_PAGE = 12;
 

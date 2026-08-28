@@ -1,4 +1,4 @@
-import type { Note } from "@/features/notes/types";
+import type { Note } from "@/types/note";
 import css from "./NotePreview.module.css";
 
 interface NotePreviewProps {

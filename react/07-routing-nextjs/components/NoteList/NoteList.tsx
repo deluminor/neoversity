@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ROUTES } from "@/constants/routes";
 
-import type { Note } from "@/features/notes/types";
+import type { Note } from "@/types/note";
 import css from "./NoteList.module.css";
 
 interface NoteListProps {

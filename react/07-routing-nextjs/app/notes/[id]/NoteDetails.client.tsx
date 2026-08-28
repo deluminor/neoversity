@@ -6,7 +6,7 @@ import ErrorMessage from "../../../components/ErrorMessage/ErrorMessage";
 
 
 import { useParams } from "next/navigation";
-import { fetchNoteById } from "@/features/notes/requests/notes.datasource";
+import { fetchNoteById } from "@/lib/api";
 import css from "./NoteDetails.module.css";
 
 export default function NoteDetailsClient({ id: propsId }: { id?: string }) {

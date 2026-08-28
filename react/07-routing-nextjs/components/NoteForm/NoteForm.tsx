@@ -1,6 +1,6 @@
 import { ErrorMessage, Field, Form, Formik, type FormikHelpers } from "formik";
 import * as Yup from "yup";
-import { NOTE_TAGS, type NewNote } from "@/features/notes/types";
+import { NOTE_TAGS, type NewNote } from "@/types/note";
 import css from "./NoteForm.module.css";
 
 const NoteFormSchema = Yup.object({
