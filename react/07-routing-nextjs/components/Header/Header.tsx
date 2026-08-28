@@ -15,7 +15,7 @@ export default function Header() {
             <Link href={ROUTES.HOME}>Home</Link>
           </li>
           <li>
-            <Link href={ROUTES.NOTES}>Notes</Link>
+            <Link href={ROUTES.NOTES_FILTER_ALL}>Notes</Link>
           </li>
         </ul>
       </nav>
