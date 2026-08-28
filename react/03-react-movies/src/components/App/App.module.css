@@ -1,0 +1,82 @@
+.app {
+  --app-pad: clamp(16px, 3vw, 32px);
+  min-height: 100svh;
+  padding: 0 var(--app-pad) 56px;
+}
+
+.main {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  min-height: min(66svh, 600px);
+  text-align: center;
+  padding: 56px 16px;
+  animation: heroIn 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: min(420px, 70vw);
+  height: min(420px, 70vw);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(215, 179, 122, 0.12),
+    transparent 68%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heroEyebrow {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 18px;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.heroTitle {
+  position: relative;
+  margin: 0 0 18px;
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 7vw, 5.4rem);
+  font-weight: 600;
+  font-optical-sizing: auto;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: var(--text-strong);
+  z-index: 1;
+}
+
+.heroText {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  font-size: 1.08rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

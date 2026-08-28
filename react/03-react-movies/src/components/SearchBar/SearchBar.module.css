@@ -1,0 +1,120 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  margin: 0 calc(var(--app-pad, 16px) * -1) 32px;
+  padding: 16px var(--app-pad, 16px);
+  backdrop-filter: blur(20px) saturate(1.15);
+  background: linear-gradient(
+    180deg,
+    rgba(6, 7, 10, 0.92) 0%,
+    rgba(6, 7, 10, 0.72) 100%
+  );
+  border-bottom: 1px solid var(--line);
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.link {
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--accent-strong);
+  text-decoration: none;
+}
+
+.form {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  flex-wrap: nowrap;
+  width: min(100%, 440px);
+  padding: 4px;
+  border-radius: 14px;
+  background: rgba(246, 241, 232, 0.03);
+  border: 1px solid var(--line);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form:focus-within {
+  border-color: rgba(215, 179, 122, 0.45);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.input {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 11px 14px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-strong);
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+.input::placeholder {
+  color: rgba(154, 148, 138, 0.85);
+}
+
+.button {
+  flex: 0 0 auto;
+  padding: 11px 18px;
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #17140f;
+  background: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    var(--accent-strong) 100%
+  );
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.button:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form {
+    width: 100%;
+  }
+}
