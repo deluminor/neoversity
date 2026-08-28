@@ -1,7 +1,7 @@
 import { fetchNoteById } from "@/lib/api";
 import NotePreview from "@/components/NotePreview/NotePreview";
 import type { Note } from "@/types/note";
-import ModalIntercept from "./ModalIntercept.client";
+import NotePreviewClient from "./NotePreview.client";
 
 export default async function NoteModalPreview({
   params,
@@ -19,12 +19,12 @@ export default async function NoteModalPreview({
   }
 
   return (
-    <ModalIntercept>
+    <NotePreviewClient>
       {note ? (
         <NotePreview note={note} />
       ) : (
         <div style={{ color: "var(--color-danger)" }}>Failed to load note.</div>
       )}
-    </ModalIntercept>
+    </NotePreviewClient>
   );
 }

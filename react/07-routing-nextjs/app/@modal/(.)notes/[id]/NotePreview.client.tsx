@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import Modal from "@/components/Modal/Modal";
 
-export default function ModalIntercept({ children }: { children: React.ReactNode }) {
+export default function NotePreviewClient({ children }: { children: React.ReactNode }) {
   const router = useRouter();
 
   const handleClose = () => {
