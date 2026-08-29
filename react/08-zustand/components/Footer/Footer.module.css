@@ -1,0 +1,33 @@
+.footer {
+  margin-top: auto;
+  padding: 2.5rem 2rem;
+  background: rgba(7, 11, 16, 0.8);
+  border-top: 1px solid var(--color-line);
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.wrap {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.wrap a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.wrap a:hover {
+  opacity: 0.8;
+}
