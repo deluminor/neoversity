@@ -1,0 +1,12 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--car-image-ratio, 1);
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface-soft);
+}
+
+.image {
+  object-fit: cover;
+}

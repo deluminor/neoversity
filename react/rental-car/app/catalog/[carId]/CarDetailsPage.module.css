@@ -1,0 +1,34 @@
+.page {
+  padding: 84px 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 640px minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.media {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.details {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .details {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}

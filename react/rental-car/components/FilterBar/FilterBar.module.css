@@ -1,0 +1,56 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 62px;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.spacerLabel {
+  padding: 0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: var(--filter-label-height, 15px);
+  margin-bottom: var(--filter-label-gap, 8px);
+  visibility: hidden;
+}
+
+.search {
+  min-width: 156px;
+  margin-bottom: 10px;
+}
+
+.reset {
+  height: auto;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.error {
+  font-size: 14px;
+  color: var(--color-error);
+}
+
+.retry {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--color-brand);
+  text-decoration: underline;
+  cursor: pointer;
+}

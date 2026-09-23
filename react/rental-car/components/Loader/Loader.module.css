@@ -1,0 +1,69 @@
+.spinner {
+  display: block;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: var(--color-border);
+  border-top-color: var(--color-brand);
+  animation: spin 900ms linear infinite;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: block;
+  background-color: rgba(245, 245, 245, 0.89);
+}
+
+.overlay .card {
+  position: sticky;
+  top: 50vh;
+  margin: 0 auto;
+  transform: translateY(-50%);
+}
+
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 48px 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 48px 40px;
+  width: min(543px, 100%);
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  text-align: center;
+}
+
+.title {
+  margin-top: 32px;
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.description {
+  max-width: 280px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-main);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation-duration: 3s;
+  }
+}

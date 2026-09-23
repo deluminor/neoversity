@@ -1,0 +1,2 @@
+export const CAR_CARD_IMAGE_RATIO = 245 / 268;
+export const CAR_DETAILS_IMAGE_RATIO = 640 / 512;

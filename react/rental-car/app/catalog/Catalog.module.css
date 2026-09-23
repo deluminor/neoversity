@@ -1,0 +1,19 @@
+.page {
+  padding: 48px 0 96px;
+}
+
+.results {
+  position: relative;
+  min-height: 360px;
+}
+
+.heading {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
