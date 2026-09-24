@@ -1,0 +1,20 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-main);
+}
+
+.mark {
+  flex-shrink: 0;
+}
+
+.text {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.accent {
+  color: var(--color-brand);
+}

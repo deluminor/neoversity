@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <main class="task-page timer-page">
+      <section class="task-shell timer-shell">
+        <a class="back-link" href="./index.html">Back</a>
+        <div class="task-header">
+          <p class="eyebrow">Task 01</p>
+          <h1 class="page-title">Countdown Timer</h1>
+        </div>
+        <div class="timer-panel">
+          <div class="timer-controls">
+            <label class="input-label" for="datetime-picker">Choose finish date and time</label>
+            <div class="control-row">
+              <input type="text" id="datetime-picker" class="date-input" />
+              <button type="button" class="primary-button" data-start>Start</button>
+            </div>
+          </div>
+          <div class="timer" aria-live="polite">
+            <div class="field">
+              <span class="value" data-days>00</span>
+              <span class="label">Days</span>
+            </div>
+            <div class="field">
+              <span class="value" data-hours>00</span>
+              <span class="label">Hours</span>
+            </div>
+            <div class="field">
+              <span class="value" data-minutes>00</span>
+              <span class="label">Minutes</span>
+            </div>
+            <div class="field">
+              <span class="value" data-seconds>00</span>
+              <span class="label">Seconds</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./js/1-timer.js"></script>
+  </body>
+</html>

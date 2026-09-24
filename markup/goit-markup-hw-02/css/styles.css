@@ -1,0 +1,134 @@
+:root {
+    --footer-color: #f4f4fd;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: #434455;
+    background-color: #ffffff;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo-link {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #4d5ae5;
+}
+
+.logo-span-header {
+    color: #2e2f42;
+}
+
+.nav-menu-link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+}
+
+.nav-menu-link:hover,
+.nav-menu-link:focus {
+    color: #404bbf;
+}
+
+.address-contacts {
+    font-style: normal;
+}
+
+.contact-link {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455;
+}
+
+.contact-link:hover,
+.contact-link:focus {
+    color: #404bbf;
+}
+
+.hero-block {
+    background-color: #2e2f42;
+}
+
+.hero-main-title {
+    font-size: 56px;
+    line-height: 1.07;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+}
+
+.hero-order-btn {
+    background-color: #4d5ae5;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.hero-order-btn:hover,
+.hero-order-btn:focus {
+    background-color: #404bbf;
+}
+
+.item-subtitle {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+}
+
+.item-description {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #434455;
+}
+
+.team-block {
+    background-color: #f4f4fd;
+}
+
+.block-title {
+    font-size: 36px;
+    line-height: 1.11;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+    color: #2e2f42;
+}
+
+.team-card-item {
+    background-color: #ffffff;
+}
+
+.page-footer-block {
+    background-color: #2e2f42;
+}
+
+.logo-span-footer {
+    color: #f4f4fd;
+}
+
+.footer-description-text {
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--footer-color);
+}

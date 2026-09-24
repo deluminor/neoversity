@@ -1,0 +1,111 @@
+@import "modern-normalize/modern-normalize.css";
+
+:root {
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-body: "Manrope", sans-serif;
+  --bg: #06070a;
+  --bg-elevated: #101218;
+  --bg-glass: rgba(14, 16, 22, 0.78);
+  --text-strong: #f6f1e8;
+  --text-muted: #9a948a;
+  --accent: #d7b37a;
+  --accent-strong: #efd3a0;
+  --accent-soft: rgba(215, 179, 122, 0.16);
+  --line: rgba(246, 241, 232, 0.1);
+  --danger: #e4a08f;
+  --info: #8fb7c9;
+  color-scheme: dark;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  font-weight: 400;
+  color: var(--text-muted);
+  background-color: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(
+      ellipse 70% 45% at 50% -8%,
+      rgba(215, 179, 122, 0.13),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 45% 35% at 92% 8%,
+      rgba(110, 140, 150, 0.1),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 40% 30% at 8% 20%,
+      rgba(70, 78, 92, 0.18),
+      transparent 50%
+    ),
+    var(--bg);
+  background-attachment: fixed;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(246, 241, 232, 0.14);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cinema-toast {
+  font-family: var(--font-body) !important;
+  font-size: 0.92rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.01em !important;
+  color: var(--text-strong) !important;
+  background: linear-gradient(
+    160deg,
+    rgba(22, 24, 30, 0.96),
+    rgba(12, 14, 18, 0.98)
+  ) !important;
+  border: 1px solid rgba(215, 179, 122, 0.28) !important;
+  border-radius: 12px !important;
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+  backdrop-filter: blur(12px);
+  padding: 12px 14px !important;
+  max-width: min(360px, calc(100vw - 32px)) !important;
+}
+
+.cinema-toast [data-icon] {
+  margin-right: 2px !important;
+}

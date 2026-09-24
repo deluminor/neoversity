@@ -1,0 +1,459 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "RentalCar — Frontend Architecture",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "output": "rental-car-architecture.archify.html",
+    "viewBox": [
+      1390,
+      550
+    ],
+    "views": [
+      {
+        "id": "catalog-discovery",
+        "label": "Catalog discovery",
+        "focus": [
+          "browser-edge",
+          "home-route",
+          "catalog-route",
+          "catalog-client",
+          "url-state",
+          "query-cache",
+          "query-options",
+          "http-client",
+          "response-schemas",
+          "rental-api"
+        ],
+        "note": "Follow server prefetch, hydration, URL-driven filters, pagination, and validated API responses."
+      },
+      {
+        "id": "details-booking",
+        "label": "Details and booking",
+        "focus": [
+          "browser-edge",
+          "details-route",
+          "booking-form",
+          "http-client",
+          "response-schemas",
+          "rental-api"
+        ],
+        "note": "Trace the new-tab details request and the validated booking mutation."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "browser-edge",
+      "type": "external",
+      "label": "Browser",
+      "sublabel": "Desktop user",
+      "tag": "Details open in a new tab",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        180,
+        92
+      ]
+    },
+    {
+      "id": "home-route",
+      "type": "frontend",
+      "label": "Home `/`",
+      "sublabel": "Server Component · app/page.tsx",
+      "tag": "Hero · View Catalog CTA",
+      "pos": [
+        280,
+        40
+      ],
+      "size": [
+        200,
+        92
+      ]
+    },
+    {
+      "id": "catalog-route",
+      "type": "frontend",
+      "label": "Catalog `/catalog`",
+      "sublabel": "Server Component · searchParams",
+      "tag": "Prefetch page 1 + filters · HydrationBoundary",
+      "pos": [
+        550,
+        40
+      ],
+      "size": [
+        240,
+        104
+      ]
+    },
+    {
+      "id": "catalog-client",
+      "type": "frontend",
+      "label": "CatalogClient",
+      "sublabel": "Client Component · useInfiniteQuery",
+      "tag": "FilterBar · Load more · full UI states",
+      "pos": [
+        870,
+        40
+      ],
+      "size": [
+        230,
+        104
+      ]
+    },
+    {
+      "id": "query-cache",
+      "type": "database",
+      "label": "Query cache",
+      "sublabel": "TanStack Query · dehydrated state",
+      "tag": "[cars, list, filters]",
+      "pos": [
+        1130,
+        40
+      ],
+      "size": [
+        220,
+        104
+      ]
+    },
+    {
+      "id": "query-options",
+      "type": "backend",
+      "label": "Query options",
+      "sublabel": "lib/query/car-queries.ts",
+      "tag": "Shared query keys · infiniteQueryOptions / queryOptions",
+      "pos": [
+        1120,
+        220
+      ],
+      "size": [
+        250,
+        104
+      ]
+    },
+    {
+      "id": "http-client",
+      "type": "backend",
+      "label": "HTTP client",
+      "sublabel": "lib/api/http.ts · fetch wrapper",
+      "tag": "Query builder · 15s timeout · typed ApiError",
+      "pos": [
+        1120,
+        390
+      ],
+      "size": [
+        250,
+        104
+      ]
+    },
+    {
+      "id": "rental-api",
+      "type": "external",
+      "label": "Rental Car API",
+      "sublabel": "car-rental-api.goit.study",
+      "tag": "GET cars / filters / {id} · POST booking-requests",
+      "pos": [
+        820,
+        390
+      ],
+      "size": [
+        270,
+        104
+      ]
+    },
+    {
+      "id": "response-schemas",
+      "type": "security",
+      "label": "Zod schemas",
+      "sublabel": "lib/schemas/* · trust boundary",
+      "tag": "API responses + form · rentalPrice string → number",
+      "pos": [
+        480,
+        390
+      ],
+      "size": [
+        260,
+        104
+      ]
+    },
+    {
+      "id": "url-state",
+      "type": "database",
+      "label": "URL search params",
+      "sublabel": "Shareable filter state",
+      "tag": "?brand&price&minMileage&maxMileage",
+      "pos": [
+        870,
+        220
+      ],
+      "size": [
+        230,
+        104
+      ]
+    },
+    {
+      "id": "details-route",
+      "type": "frontend",
+      "label": "Car details `/catalog/[carId]`",
+      "sublabel": "Server Component · generateMetadata",
+      "tag": "Cached getCar · notFound() on 404",
+      "pos": [
+        40,
+        220
+      ],
+      "size": [
+        260,
+        104
+      ]
+    },
+    {
+      "id": "booking-form",
+      "type": "frontend",
+      "label": "BookingForm",
+      "sublabel": "Client Component · RHF + Zod resolver",
+      "tag": "useMutation · success/error toast",
+      "pos": [
+        390,
+        220
+      ],
+      "size": [
+        250,
+        104
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "open-home",
+      "from": "browser-edge",
+      "to": "home-route",
+      "label": "HTTP GET /",
+      "variant": "emphasis"
+    },
+    {
+      "id": "browse-catalog",
+      "from": "home-route",
+      "to": "catalog-route",
+      "label": "View Catalog link",
+      "variant": "emphasis",
+      "labelAt": [
+        515,
+        180
+      ]
+    },
+    {
+      "id": "open-details",
+      "from": "browser-edge",
+      "to": "details-route",
+      "label": "Read more (target=_blank)",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "prefetch-catalog",
+      "from": "catalog-route",
+      "to": "query-options",
+      "label": "prefetch page 1 + filter options",
+      "fromSide": "bottom",
+      "toSide": "bottom",
+      "via": [
+        [
+          670,
+          350
+        ],
+        [
+          1245,
+          350
+        ]
+      ],
+      "labelAt": [
+        1030,
+        340
+      ]
+    },
+    {
+      "id": "hydrate-client",
+      "from": "catalog-route",
+      "to": "catalog-client",
+      "label": "dehydrated state",
+      "variant": "emphasis",
+      "labelAt": [
+        830,
+        180
+      ]
+    },
+    {
+      "id": "write-filters",
+      "from": "catalog-client",
+      "to": "url-state",
+      "label": "router.push(filters)",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelAt": [
+        985,
+        180
+      ]
+    },
+    {
+      "id": "read-filters",
+      "from": "url-state",
+      "to": "catalog-route",
+      "label": "searchParams → server filters",
+      "variant": "dashed",
+      "fromSide": "left",
+      "toSide": "bottom",
+      "labelAt": [
+        820,
+        200
+      ]
+    },
+    {
+      "id": "read-cache",
+      "from": "catalog-client",
+      "to": "query-cache",
+      "label": "useInfiniteQuery(filters)",
+      "variant": "emphasis",
+      "labelAt": [
+        1140,
+        180
+      ]
+    },
+    {
+      "id": "next-page",
+      "from": "query-cache",
+      "to": "query-options",
+      "label": "Load more: page N+1",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "request-page",
+      "from": "query-options",
+      "to": "http-client",
+      "label": "typed request per page",
+      "fromSide": "bottom",
+      "toSide": "top",
+      "labelAt": [
+        1315,
+        350
+      ]
+    },
+    {
+      "id": "details-request",
+      "from": "details-route",
+      "to": "http-client",
+      "label": "fetchCarById (SSR)",
+      "fromSide": "bottom",
+      "toSide": "bottom",
+      "via": [
+        [
+          170,
+          530
+        ],
+        [
+          1245,
+          530
+        ]
+      ],
+      "labelAt": [
+        350,
+        520
+      ]
+    },
+    {
+      "id": "booking-request",
+      "from": "booking-form",
+      "to": "http-client",
+      "label": "POST booking request",
+      "fromSide": "bottom",
+      "toSide": "left",
+      "via": [
+        [
+          515,
+          370
+        ],
+        [
+          1100,
+          370
+        ],
+        [
+          1100,
+          442
+        ]
+      ],
+      "labelAt": [
+        900,
+        380
+      ]
+    },
+    {
+      "id": "validate-response",
+      "from": "http-client",
+      "to": "response-schemas",
+      "label": "parse response",
+      "variant": "security",
+      "fromSide": "bottom",
+      "toSide": "bottom",
+      "via": [
+        [
+          1245,
+          515
+        ],
+        [
+          610,
+          515
+        ]
+      ],
+      "labelAt": [
+        930,
+        505
+      ]
+    },
+    {
+      "id": "remote-fetch",
+      "from": "http-client",
+      "to": "rental-api",
+      "label": "fetch, no-store",
+      "variant": "emphasis",
+      "labelAt": [
+        1135,
+        545
+      ]
+    },
+    {
+      "id": "show-booking",
+      "from": "details-route",
+      "to": "booking-form",
+      "label": "carId"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Server-to-client catalog path",
+      "items": [
+        "Server parses URL filters and prefetches the first result page",
+        "Hydrated cache and shared query options keep keys aligned"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Validated trust boundary",
+      "items": [
+        "Every API response is parsed with Zod",
+        "Booking input uses the same schema-first boundary"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "API surface",
+      "items": [
+        "GET /cars?page&perPage=12&brand&price&minMileage&maxMileage",
+        "GET /cars/filters · GET /cars/{id} · POST /cars/{id}/booking-requests"
+      ]
+    }
+  ]
+}

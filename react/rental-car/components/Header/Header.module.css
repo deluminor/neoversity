@@ -1,0 +1,19 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background-color: var(--color-white);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--header-height);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}

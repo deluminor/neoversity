@@ -1,0 +1,31 @@
+.card {
+  padding: 32px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--color-gray);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.form input {
+  height: 48px;
+}
+
+.submit {
+  margin-top: 8px;
+}

@@ -1,0 +1,160 @@
+:root {
+  color-scheme: dark;
+
+  --color-ink: #edf2f7;
+  --color-ink-soft: #a7b4c4;
+  --color-muted: #7a8798;
+  --color-line: rgba(232, 240, 248, 0.1);
+  --color-line-strong: rgba(232, 240, 248, 0.16);
+  --color-surface: rgba(18, 24, 32, 0.72);
+  --color-surface-strong: #141b24;
+  --color-surface-elevated: #1a232e;
+  --color-accent: #3dd6c6;
+  --color-accent-strong: #2bb8a9;
+  --color-accent-soft: rgba(61, 214, 198, 0.14);
+  --color-danger: #f07178;
+  --color-danger-soft: rgba(240, 113, 120, 0.14);
+  --color-bg-deep: #070b10;
+  --shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.35);
+  --shadow-lift: 0 20px 48px rgba(0, 0, 0, 0.45);
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --font-display: "Sora", system-ui, sans-serif;
+  --font-body: "Outfit", system-ui, sans-serif;
+
+  color: var(--color-ink);
+  background-color: var(--color-bg-deep);
+  background-image:
+    radial-gradient(
+      900px 520px at 12% -8%,
+      rgba(61, 214, 198, 0.18),
+      transparent 58%
+    ),
+    radial-gradient(
+      760px 480px at 94% 0%,
+      rgba(56, 189, 248, 0.1),
+      transparent 52%
+    ),
+    radial-gradient(
+      700px 420px at 50% 110%,
+      rgba(240, 113, 120, 0.07),
+      transparent 55%
+    ),
+    linear-gradient(165deg, #090e15 0%, #0b1219 48%, #0a1016 100%);
+  font-family: var(--font-body);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.45;
+  background-image:
+    linear-gradient(rgba(237, 242, 247, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(237, 242, 247, 0.025) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, black 35%, transparent 85%);
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  z-index: -1;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+::selection {
+  background: rgba(61, 214, 198, 0.35);
+  color: #fff;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}

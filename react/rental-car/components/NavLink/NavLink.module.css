@@ -1,0 +1,17 @@
+.link {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-main);
+  transition: color var(--transition);
+}
+
+.link:hover,
+.link:focus-visible {
+  color: var(--color-brand);
+}
+
+.active {
+  color: var(--color-brand);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
