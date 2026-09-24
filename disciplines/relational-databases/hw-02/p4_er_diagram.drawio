@@ -1,0 +1,111 @@
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="er-hw02" name="ER Diagram — Orders DB">
+    <mxGraphModel dx="1422" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- ======== CUSTOMERS ======== -->
+        <mxCell id="c0" value="customers" style="swimlane;fontStyle=1;align=center;startSize=28;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;collapsible=0;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="60" width="260" height="136" as="geometry"/>
+        </mxCell>
+        <mxCell id="c_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=10;rotatable=0;labelPosition=left;points=[];portConstraint=eastwest;strokeColor=#6c8ebf;" vertex="1" parent="c0">
+          <mxGeometry y="28" width="260" height="8" as="geometry"/>
+        </mxCell>
+        <mxCell id="c1" value="🔑 customer_id : INT  AI" style="text;align=left;verticalAlign=middle;spacingLeft=8;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=4;" vertex="1" parent="c0">
+          <mxGeometry y="36" width="260" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="c2" value="name : VARCHAR(100)" style="text;align=left;verticalAlign=middle;spacingLeft=8;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="c0">
+          <mxGeometry y="64" width="260" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="c3" value="address : VARCHAR(255)" style="text;align=left;verticalAlign=middle;spacingLeft=8;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="c0">
+          <mxGeometry y="92" width="260" height="28" as="geometry"/>
+        </mxCell>
+
+        <!-- ======== PRODUCTS ======== -->
+        <mxCell id="p0" value="products" style="swimlane;fontStyle=1;align=center;startSize=28;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;collapsible=0;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="60" width="260" height="108" as="geometry"/>
+        </mxCell>
+        <mxCell id="p_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=10;rotatable=0;labelPosition=left;points=[];portConstraint=eastwest;strokeColor=#82b366;" vertex="1" parent="p0">
+          <mxGeometry y="28" width="260" height="8" as="geometry"/>
+        </mxCell>
+        <mxCell id="p1" value="🔑 product_id : INT  AI" style="text;align=left;verticalAlign=middle;spacingLeft=8;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=4;" vertex="1" parent="p0">
+          <mxGeometry y="36" width="260" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2" value="name : VARCHAR(100)" style="text;align=left;verticalAlign=middle;spacingLeft=8;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="p0">
+          <mxGeometry y="64" width="260" height="28" as="geometry"/>
+        </mxCell>
+
+        <!-- ======== ORDERS ======== -->
+        <mxCell id="o0" value="orders" style="swimlane;fontStyle=1;align=center;startSize=28;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=14;collapsible=0;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="340" width="260" height="136" as="geometry"/>
+        </mxCell>
+        <mxCell id="o_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=10;rotatable=0;labelPosition=left;points=[];portConstraint=eastwest;strokeColor=#d6b656;" vertex="1" parent="o0">
+          <mxGeometry y="28" width="260" height="8" as="geometry"/>
+        </mxCell>
+        <mxCell id="o1" value="🔑 order_id : INT  AI" style="text;align=left;verticalAlign=middle;spacingLeft=8;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=4;" vertex="1" parent="o0">
+          <mxGeometry y="36" width="260" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="o2" value="🔗 customer_id : INT  FK" style="text;align=left;verticalAlign=middle;spacingLeft=8;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=2;" vertex="1" parent="o0">
+          <mxGeometry y="64" width="260" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="o3" value="order_date : DATE" style="text;align=left;verticalAlign=middle;spacingLeft=8;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="o0">
+          <mxGeometry y="92" width="260" height="28" as="geometry"/>
+        </mxCell>
+
+        <!-- ======== ORDER_ITEMS ======== -->
+        <mxCell id="oi0" value="order_items" style="swimlane;fontStyle=1;align=center;startSize=28;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;collapsible=0;swimlaneLine=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="310" width="300" height="166" as="geometry"/>
+        </mxCell>
+        <mxCell id="oi_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=10;rotatable=0;labelPosition=left;points=[];portConstraint=eastwest;strokeColor=#9673a6;" vertex="1" parent="oi0">
+          <mxGeometry y="28" width="300" height="8" as="geometry"/>
+        </mxCell>
+        <mxCell id="oi1" value="🔑 order_item_id : INT  AI" style="text;align=left;verticalAlign=middle;spacingLeft=8;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=4;" vertex="1" parent="oi0">
+          <mxGeometry y="36" width="300" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="oi2" value="🔗 order_id : INT  FK" style="text;align=left;verticalAlign=middle;spacingLeft=8;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=2;" vertex="1" parent="oi0">
+          <mxGeometry y="64" width="300" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="oi3" value="🔗 product_id : INT  FK" style="text;align=left;verticalAlign=middle;spacingLeft=8;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;fontStyle=2;" vertex="1" parent="oi0">
+          <mxGeometry y="92" width="300" height="28" as="geometry"/>
+        </mxCell>
+        <mxCell id="oi4" value="quantity : INT" style="text;align=left;verticalAlign=middle;spacingLeft=8;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="oi0">
+          <mxGeometry y="120" width="300" height="28" as="geometry"/>
+        </mxCell>
+
+        <!-- ======== RELATIONSHIPS ======== -->
+
+        <!-- customers 1 ——< orders (customer_id FK) -->
+        <mxCell id="e1" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;endFill=0;startArrow=ERmandOne;startFill=0;strokeWidth=2;strokeColor=#333333;" edge="1" source="c1" target="o2" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1_label" value="1 : N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#333333;" vertex="1" connectable="0" parent="e1">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint x="-10" as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- orders 1 ——< order_items (order_id FK) -->
+        <mxCell id="e2" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;endFill=0;startArrow=ERmandOne;startFill=0;strokeWidth=2;strokeColor=#333333;" edge="1" source="o1" target="oi2" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2_label" value="1 : N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#333333;" vertex="1" connectable="0" parent="e2">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- products 1 ——< order_items (product_id FK) -->
+        <mxCell id="e3" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;endFill=0;startArrow=ERmandOne;startFill=0;strokeWidth=2;strokeColor=#333333;" edge="1" source="p1" target="oi3" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3_label" value="1 : N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontStyle=1;fontColor=#333333;" vertex="1" connectable="0" parent="e3">
+          <mxGeometry x="-0.2" relative="1" as="geometry">
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
