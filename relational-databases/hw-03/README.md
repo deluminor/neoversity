@@ -1,5 +1,3 @@
-# goit-rdb-hw-03
-
 Homework 3 — Relational Databases.  
 Six DQL queries against the Topic 3 dataset (`products`, `shippers`).
 
