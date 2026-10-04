@@ -1,0 +1,39 @@
+Task 4 — written answers (goit-rdb-hw-04)
+
+4.1 How many rows does the full INNER JOIN return?
+Answer: 518 rows.
+
+4.2 What happens when some INNER JOINs are replaced with LEFT / RIGHT JOIN?
+Observed counts on this dataset:
+- INNER JOIN (all tables): 518
+- LEFT JOIN customers (rest INNER): 518
+- RIGHT JOIN shippers (rest INNER): 518
+
+Why the count did not change:
+Every foreign key in the Topic 3 dump has a matching parent row
+(order_details → orders → customers/employees/shippers, products → categories/suppliers).
+LEFT / RIGHT JOIN keep unmatched rows from the preserved side, but here there are
+no unmatched keys, so the result size stays the same as INNER JOIN.
+
+When the count would grow or shrink:
+- LEFT JOIN can keep more rows if the left table has keys missing on the right
+  (those rows appear with NULL columns from the right table).
+- RIGHT JOIN can keep more rows if the right table has keys missing on the left.
+- If later INNER JOINs are still present, they can remove those NULL-extended rows
+  again — that is why changing only one join does not always change COUNT(*).
+
+4.3 Filter: employee_id > 3 AND employee_id <= 10
+Executed with WHERE on employees.employee_id. Screenshot: p4_3_employee_filter.png
+
+4.4 GROUP BY category name — COUNT(*) and AVG(order_details.quantity)
+Screenshot: p4_4_group_by_category.png
+
+4.5 HAVING AVG(quantity) > 21
+Screenshot: p4_5_having_avg_gt_21.png
+
+4.6 ORDER BY rows_count DESC
+Screenshot: p4_6_order_by_desc.png
+
+4.7 Four rows, skip the first: LIMIT 4 OFFSET 1
+Screenshot: p4_7_limit_offset.png
+Result starts from the second group after sorting (Beverages, Confections, Seafood, Meat/Poultry).
