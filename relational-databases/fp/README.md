@@ -69,7 +69,3 @@ Task 3 top row: **World** (`OWID_WRL`) — avg rabies ≈ **20192.37**.
 | 3 | AVG / MIN / MAX / SUM of `Number_rabies` per entity | empty/`NULL` excluded; `ORDER BY AVG DESC LIMIT 10` |
 | 4 | `MAKEDATE(Year,1)`, `CURDATE()`, `TIMESTAMPDIFF(YEAR, …)` | sample rows only |
 | 5 | `year_diff_from_today(Year)` + demo `SELECT` | same year-diff as task 4 |
-
-## LMS archive
-
-Zip deliverables manually as `ФП_ПІБ` per course instructions (not automated here).
